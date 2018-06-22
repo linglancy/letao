@@ -99,5 +99,6 @@ html,body{
   background-color: #fff;
   /*可以保证，所有的内容全部都是在main内部*/
   overflow: hidden;
+  /* 定位是因为区域滚动是用定位做的，若不用定位则区域滚动会依照浏览器页面定位 */
   position: relative;
 }
