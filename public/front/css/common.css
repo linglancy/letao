@@ -58,6 +58,7 @@ html,body{
   height: 45px;
   text-align: center;
   color: #fff;
+  font-weight: 400;
   line-height: 45px;
   margin: 0;
 }
@@ -101,4 +102,53 @@ html,body{
   overflow: hidden;
   /* 定位是因为区域滚动是用定位做的，若不用定位则区域滚动会依照浏览器页面定位 */
   position: relative;
+}
+
+/* input搜索框公用 */
+
+.search_top {
+  margin: 10px;
+  position: relative;
+}
+
+.search_top .search_input {
+  border: 1px solid #069;
+  border-radius: 5px;
+  height: 34px;
+  line-height: 34px;
+  font-size: 12px;
+  margin: 0;
+}
+.search_top button {
+  position: absolute;
+  top:0;
+  right: 0;
+  border-radius:0 5px 5px 0;
+}
+
+/* 产品公共 */
+.lt_product {
+  padding: 10px;
+}
+
+.lt_product .item {
+  float: left;
+  width: 48%;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.lt_product a .price {
+  color: red;
+}
+
+.lt_product a .old_price {
+  text-decoration: line-through;
+}
+
+.lt_product a:nth-child(even) {
+  margin-left: 4%;
 }

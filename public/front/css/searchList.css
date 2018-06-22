@@ -1,0 +1,20 @@
+.lt_main .nav-bar {
+  background-color: #eee;
+  height: 30px;
+  padding: 0 10px;
+}
+
+.lt_main .nav-bar li {
+  float: left;
+  width: 25%;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+.lt_main .nav-bar li a {
+  font-size: 12px;
+  color: #666;
+}
+.lt_main .nav-bar li.now a {
+  color: darkorange;
+}

@@ -8,28 +8,3 @@
   width: 33.33%;
   float: left;
 }
-.lt_product {
-  padding: 10px;
-}
-
-.lt_product .item {
-  float: left;
-  width: 48%;
-  border: 1px solid #ccc;
-  margin-bottom: 10px;
-  padding: 10px;
-  background-color: #fff;
-  text-align: center;
-}
-
-.lt_product a .price {
-  color: red;
-}
-
-.lt_product a .old_price {
-  text-decoration: line-through;
-}
-
-.lt_product a:nth-child(even) {
-  margin-left: 4%;
-}

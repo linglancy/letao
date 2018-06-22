@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="lib/mui/css/mui.min.css">
   <link rel="stylesheet" href="lib/fa/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/common.css">
-  <link rel="stylesheet" href="css/categroy.css">
+  <link rel="stylesheet" href="css/search.css">
 </head>
 
 <body>
@@ -22,46 +22,27 @@
         <span class="mui-icon mui-icon-back"></span>
       </a>
       <div class="title">
-        <h4>乐淘分类</h4>
+        <h4>搜索中心</h4>
       </div>
-      <a href="search.html" class="hd_right">
-        <span class="fa fa-search"></span>
-      </a>
-
     </div>
 
     <div class="lt_main">
-      <!-- 左侧边 -->
-
-      <div class="categroy_aside_left">
-        <!--滚动容器-->
-        <div class="mui-scroll-wrapper">
-          <!--子盒子-->
-          <ul class="mui-scroll">
+      <!--滚动容器-->
+      <div class="mui-scroll-wrapper">
+        <!--子盒子-->
+        <div class="mui-scroll">
+          <div class="search_top">
+            <input type="text" placeholder="请输入搜索关键字" class="search_input">
+            <button class="mui-btn mui-btn-primary">搜索</button>
+          </div>
+          <div class="search_bottom">
             <!-- 坑 -->
-
-          </ul>
-
-        </div>
-      </div>
-
-
-      <div class="categroy_brand_right">
-        <div class="mui-scroll-wrapper">
-          <!--子盒子-->
-          <ul class="mui-scroll mui-clearfix">
-
-           <!-- keng -->
-
-          </ul>
+          </div>
 
         </div>
+
       </div>
-
-
-
     </div>
-
 
     <div class="lt_footer">
       <ul class="mui-clearfix">
@@ -71,7 +52,7 @@
             <p class="desc">首页</p>
           </a>
         </li>
-        <li class="now">
+        <li>
           <a href="category.html">
             <span class="fa fa-bars"></span>
             <p class="desc">分类</p>
@@ -95,35 +76,36 @@
   </div>
 
 
-<!-- 渲染左侧 -->
   <script type="text/html" id="tpl">
-  {{each rows v i}}
-    <li data-id="{{v.id}}" class={{v.id===1?"now":""}}>
-        <a href="#">{{v.categoryName}}</a>
-    </li>
-  {{/each}}
-  </script>
-
-  <!-- 渲染右侧 -->
-  <script type="text/html" id="tpl_brand">
-    {{if rows.length===0}}
-    <p style="padding:10px">没有更多的品牌</p>
+    {{if arr.length===0}}
+     <p> 没有历史记录  </p>  
     {{/if}}
-    {{each rows v i}}
-    <li>
-        <a href="#">
-          <img src="{{v.brandLogo}}" alt="">
-          <p>{{v.brandName}}</p>
-        </a>
-      </li>
-    {{/each}}
-    </script>
+
+    {{if arr.length > 0}}
+    
+    <div class="btm_top mui-clearfix">
+      <span class="mui-pull-left">搜索历史</span>
+      <span class="mui-pull-right fa fa-trash btn_empty">清空记录</span>
+    </div>
+    <div class="search_content">
+      <ul>
+          {{each arr v i}}
+            <li class="clearfix">
+              <a href="#" class="mui-pull-left">{{v}}</a>
+              <span class="mui-icon mui-icon-closeempty mui-pull-right btn_delete" data-index="{{i}}"></span>
+            </li>
+          {{/each}}
+      </ul>
+    </div>
+    {{/if}}
+    
+  </script>
 
   <script src="lib/zepto/zepto.min.js"></script>
   <script src="lib/artTemplate/template-web.js"></script>
   <script src="lib/mui/js/mui.min.js"></script>
   <script src="js/common.js"></script>
-  <script src="js/category.js"></script>
+  <script src="js/search.js"></script>
 </body>
 
 </html>
